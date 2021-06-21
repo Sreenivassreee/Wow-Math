@@ -17,6 +17,7 @@ class CourseDetailedPage extends StatefulWidget {
 }
 
 int? segmentedControlValue = 0;
+List? items = ["Videos", "Materials", "Assignments", "Simulation"];
 
 final Map<int, Widget> children = const <int, Widget>{
   0: Text("Videos"),
@@ -138,7 +139,7 @@ class _CourseDetailedPageState extends State<CourseDetailedPage> {
               ),
               alignment: Alignment.topLeft,
               child: Text(
-                'Videos',
+                items![segmentedControlValue!].toString(),
                 style: TextStyle(
                   fontSize: 25,
                   fontFamily: 'Roboto',
