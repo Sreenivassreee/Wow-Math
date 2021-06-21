@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:swardhara_new/DetailedPage/DetailedPage.dart';
 
-
-class LearnHisdustaniMusic extends StatefulWidget {
-  const LearnHisdustaniMusic({Key? key}) : super(key: key);
+class Courses extends StatefulWidget {
+  const Courses({Key? key}) : super(key: key);
 
   @override
-  _LearnHisdustaniMusicState createState() => _LearnHisdustaniMusicState();
+  _CoursesState createState() => _CoursesState();
 }
 
-class _LearnHisdustaniMusicState extends State<LearnHisdustaniMusic> {
+class _CoursesState extends State<Courses> {
   List li = [
     1,
     3,
@@ -20,25 +19,23 @@ class _LearnHisdustaniMusicState extends State<LearnHisdustaniMusic> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.topCenter,
       height: (li.length * 180) + 80,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
+        // mainAxisSize: MainAxisSize.max,
         children: [
           Container(
             child: Padding(
-              padding: const EdgeInsets.only(top: 10.0, left: 10,bottom: 10),
+              padding: const EdgeInsets.only(top: 10.0, left: 20, bottom: 10),
               child: Text(
-                "Swargandhva - Learn Hindustani Music ",
+                "COURSES",
                 textAlign: TextAlign.end,
                 style: TextStyle(
-                  fontFamily: 'Roboto',
-
-
-                  fontSize: 15.0,
-
-                ),
+                    fontSize: 20.0,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -55,6 +52,9 @@ class _LearnHisdustaniMusicState extends State<LearnHisdustaniMusic> {
                   padding:
                       const EdgeInsets.only(left: 10.0, right: 10, bottom: 5),
                   child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
                     child: InkWell(
                       onTap: () {
                         Navigator.push(
@@ -69,34 +69,39 @@ class _LearnHisdustaniMusicState extends State<LearnHisdustaniMusic> {
                         width: double.infinity,
 
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              width: 100,
-                              height: 135,
-                              child: Image.network(
-                                'https://www.creaticity.co.in/images/eventcity/upcoming/sid-sriram.jpg',
-                                fit: BoxFit.cover,
+                            ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                bottomLeft: Radius.circular(20),
+                              ),
+                              child: Container(
+                                alignment: Alignment.centerLeft,
+                                child: Image.network(
+                                  'https://www.creaticity.co.in/images/eventcity/upcoming/sid-sriram.jpg',
+                                  height: 150.0,
+                                  width: 150.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                             Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 0.0),
-                                  child: Container(
-                                    alignment: Alignment.topCenter,
-                                    width:
-                                        MediaQuery.of(context).size.width - 150,
-                                    child: Text(
-                                      "Complementary Volume - Free lessons to experience the learning process",
-                                      style: new TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 14.0,
-
-                                      ),
+                                Container(
+                                  padding: EdgeInsets.only(top: 10),
+                                  alignment: Alignment.centerLeft,
+                                  width:
+                                      MediaQuery.of(context).size.width - 190,
+                                  child: Text(
+                                    "Mobile Development",
+                                    style: new TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18.0,
                                     ),
                                   ),
                                 ),
@@ -104,44 +109,37 @@ class _LearnHisdustaniMusicState extends State<LearnHisdustaniMusic> {
                                   padding: const EdgeInsets.only(left: 0.0),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width - 150,
+                                        MediaQuery.of(context).size.width - 190,
                                     child: Text(
-                                      "Complementary Volume - Free lessons to experience the learning process",
+                                      "Complementary Volume",
                                       style: new TextStyle(
-                                        fontSize: 10.0,
+                                        fontSize: 12.0,
                                         fontFamily: 'Roboto',
                                       ),
                                     ),
                                   ),
                                 ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      margin: const EdgeInsets.all(5.0),
-                                      padding: const EdgeInsets.all(4.0),
-                                      decoration: BoxDecoration(
-                                        color: Color(0xffe5634d),
-
-                                        border: Border.all(
-
-                                          color: Colors.orange,
-
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 10.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        '12 Videos , 10 Assignments',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontFamily: 'Roboto',
                                         ),
                                       ),
-                                      child: Text('Premium',style: TextStyle(color: Colors.white,                fontFamily: 'Roboto',),),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 10.0),
-                                      child: Text(
-                                        '11 Lessons',
+                                      Text(
+                                        'and More',
                                         style: TextStyle(fontSize: 10),
                                       ),
-                                    ),
-                                  ],
-                                )
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ],

@@ -15,11 +15,12 @@ class _OurStartFacultiesState extends State<OurStartFaculties> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Container(
           alignment: Alignment.bottomLeft,
           child: Padding(
-            padding: const EdgeInsets.only(left: 15,bottom: 5,top: 20),
+            padding: const EdgeInsets.only(left: 20,bottom: 0,top: 10),
             child: Text(
               "Our Start Faculties",
               textAlign: TextAlign.start,
@@ -32,8 +33,9 @@ class _OurStartFacultiesState extends State<OurStartFaculties> {
             ),
           ),
         ),
+        SizedBox(height: 10,),
         Container(
-          height: 150,
+          height: 120,
           child: Center(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -48,16 +50,13 @@ class _OurStartFacultiesState extends State<OurStartFaculties> {
                       ),
                     );
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 130,
-                      width: 100,
-                      child: CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                        backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt28SHuioMNFCApN0ZgSB2wW48od3GPaSbKQ&usqp=CAU"),
-                      )
-                    ),
+                  child: Container(
+                    height: 130,
+                    width: 100,
+                    child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                      backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt28SHuioMNFCApN0ZgSB2wW48od3GPaSbKQ&usqp=CAU"),
+                    )
                   ),
                 );
               },

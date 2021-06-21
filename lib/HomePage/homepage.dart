@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:swardhara_new/HomePage/components/AboutAs.dart';
-import 'package:swardhara_new/HomePage/components/Learn_hindustani.dart';
+import 'package:swardhara_new/HomePage/components/Courses.dart';
 import 'package:swardhara_new/HomePage/components/Our_Start_Faculties.dart';
 import 'package:swardhara_new/HomePage/components/slider.dart';
 
@@ -32,14 +32,15 @@ class HomePage extends StatelessWidget {
                     child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
 
                     SizedBox(height: 10),
                     Expanded(child: VerticalSlider()),
-                    SizedBox(height: 10),
+                    SizedBox(height: 20),
                     Flexible(child: OurStartFaculties()),
-                    SizedBox(height: 10),
-                    LearnHisdustaniMusic(),
+                    SizedBox(height: 20),
+                    Courses(),
                     // AboutUs()
                   ],
                 )),
