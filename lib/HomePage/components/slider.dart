@@ -39,8 +39,7 @@ class _VerticalSliderState extends State<VerticalSlider> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+    return Center(
         child: Container(
             child: CarouselSlider.builder(
               itemCount: imgList.length,
@@ -113,7 +112,7 @@ class _VerticalSliderState extends State<VerticalSlider> {
               },
             )
         ),
-      ),
+
     );
   }
 }

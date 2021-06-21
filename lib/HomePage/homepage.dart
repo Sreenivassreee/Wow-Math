@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:swardhara_new/HomePage/components/AboutAs.dart';
 import 'package:swardhara_new/HomePage/components/Learn_hindustani.dart';
-import 'package:swardhara_new/HomePage/components/live_performances.dart';
+import 'package:swardhara_new/HomePage/components/Our_Start_Faculties.dart';
 import 'package:swardhara_new/HomePage/components/slider.dart';
 
 class HomePage extends StatelessWidget {
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                     SizedBox(height: 10),
                     Expanded(child: VerticalSlider()),
                     SizedBox(height: 10),
-                    Flexible(child: LivePerformances()),
+                    Flexible(child: OurStartFaculties()),
                     SizedBox(height: 10),
                     LearnHisdustaniMusic(),
                     // AboutUs()

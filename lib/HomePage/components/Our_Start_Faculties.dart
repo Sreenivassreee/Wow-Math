@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:swardhara_new/Suggested/SuggestedPage.dart';
 
-class LivePerformances extends StatefulWidget {
-  const LivePerformances({Key? key}) : super(key: key);
+class OurStartFaculties extends StatefulWidget {
+  const OurStartFaculties({Key? key}) : super(key: key);
 
   @override
-  _LivePerformancesState createState() => _LivePerformancesState();
+  _OurStartFacultiesState createState() => _OurStartFacultiesState();
 }
 
-class _LivePerformancesState extends State<LivePerformances> {
+class _OurStartFacultiesState extends State<OurStartFaculties> {
   List food=["https://www.nia.nih.gov/themes/nia/images/woyp/woyp-fruitjuice.jpg","https://www.nia.nih.gov/themes/nia/images/woyp/woyp-driedfruit.jpg","https://www.nia.nih.gov/themes/nia/images/woyp/woyp-cantaloupe.jpg","https://www.nia.nih.gov/themes/nia/images/woyp/woyp-peach.jpg","https://www.nia.nih.gov/themes/nia/images/woyp/woyp-driedfruit.jpg","https://www.nia.nih.gov/themes/nia/images/woyp/woyp-grapes.jpg","https://www.nia.nih.gov/themes/nia/images/woyp/woyp-bread.jpg","https://www.nia.nih.gov/themes/nia/images/woyp/woyp-cereal.jpg"];
 
   @override
@@ -21,12 +21,13 @@ class _LivePerformancesState extends State<LivePerformances> {
           child: Padding(
             padding: const EdgeInsets.only(left: 15,bottom: 5,top: 20),
             child: Text(
-              "Swarotsav - Live Performances",
+              "Our Start Faculties",
               textAlign: TextAlign.start,
               style: TextStyle(
 
                 fontFamily: 'Roboto',
-                fontSize: 15.0,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold
               ),
             ),
           ),
@@ -52,13 +53,10 @@ class _LivePerformancesState extends State<LivePerformances> {
                     child: Container(
                       height: 130,
                       width: 100,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(5.0),
-                        child: Image.network(
-                         food[index],
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                      child: CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                        backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt28SHuioMNFCApN0ZgSB2wW48od3GPaSbKQ&usqp=CAU"),
+                      )
                     ),
                   ),
                 );
