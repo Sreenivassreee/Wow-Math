@@ -1,9 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swardhara_new/Youtube/Youtube%20Player.dart';
 
-class Videos extends StatelessWidget {
-  const Videos({Key? key}) : super(key: key);
-
+class Assignments extends StatelessWidget {
+  const Assignments({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -23,13 +22,6 @@ class Videos extends StatelessWidget {
             ),
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => YoutubePage('p2lYr3vM_1w'),
-                  ),
-                );
-
                 // Navigator.push(
                 //   context,
                 //   MaterialPageRoute(
@@ -50,11 +42,25 @@ class Videos extends StatelessWidget {
                       ),
                       child: Container(
                         alignment: Alignment.centerLeft,
-                        child: Image.network(
-                          'https://static.toiimg.com/thumb/msid-75824261,width-800,height-600,resizemode-75,imgsize-530578,pt-32,y_pad-40/75824261.jpg',
+                        child: Container(
                           height: 120,
                           width: 120.0,
-                          fit: BoxFit.cover,
+                          color: Colors.green,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(
+                                CupertinoIcons.check_mark_circled,
+                                size: 80,
+                              ),
+                              Text("Done"),
+                              // Icon(
+                              //   CupertinoIcons.exclamationmark_circle_fill,
+                              //   size: 80,
+                              // ),
+                              // Text("Pending")
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -74,7 +80,7 @@ class Videos extends StatelessWidget {
                           alignment: Alignment.bottomLeft,
                           width: MediaQuery.of(context).size.width - 170,
                           child: Text(
-                            "Video title",
+                            "Assignment title",
                             style: new TextStyle(
                               fontSize: 18.0,
                             ),
@@ -84,7 +90,7 @@ class Videos extends StatelessWidget {
                           alignment: Alignment.bottomLeft,
                           width: MediaQuery.of(context).size.width - 170,
                           child: Text(
-                            "Description",
+                            "Assignment Description",
                             style: new TextStyle(
                               fontSize: 14.0,
                             ),

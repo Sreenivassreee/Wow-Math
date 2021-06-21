@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swardhara_new/CourseDetailedPage/Components/Materials.dart';
 import 'package:swardhara_new/CourseDetailedPage/Components/Videos.dart';
+import 'package:swardhara_new/CourseDetailedPage/Components/Assignments.dart';
 import 'package:swardhara_new/Youtube/Youtube%20Player.dart';
 import 'dart:core';
+import 'package:swardhara_new/CourseDetailedPage/Components/Simulation.dart';
 
 class CourseDetailedPage extends StatefulWidget {
   CourseDetailedPage({
@@ -40,7 +42,7 @@ class _CourseDetailedPageState extends State<CourseDetailedPage> {
               child: Stack(
                 children: [
                   Container(
-                    height: 250,
+                    height: MediaQuery.of(context).size.height / 3.5,
                     width: double.infinity,
                     child: Image.network(
                       'https://www.creaticity.co.in/images/eventcity/upcoming/sid-sriram.jpg',
@@ -144,7 +146,15 @@ class _CourseDetailedPageState extends State<CourseDetailedPage> {
                 ),
               ),
             ),
-            segmentedControlValue == 0 ? Videos() : Materials()
+
+            if (segmentedControlValue == 0)
+              Videos()
+            else if (segmentedControlValue == 1)
+              Materials()
+            else if (segmentedControlValue == 2)
+              Assignments()
+            else if (segmentedControlValue == 3)
+              SimulationScreen()
           ],
         ),
       ),
