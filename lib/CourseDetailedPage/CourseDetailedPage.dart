@@ -138,7 +138,7 @@ class _CourseDetailedPageState extends State<CourseDetailedPage> {
               child: Text(
                 'Videos',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.bold,
                 ),
