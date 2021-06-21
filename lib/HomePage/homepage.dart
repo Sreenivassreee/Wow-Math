@@ -14,8 +14,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Container(
-            height:100,
-            child: Image.asset('assets/images/Logo-2.png')),
+            height: 100, child: Image.asset('assets/images/Logo-2.png')),
         // backgroundColor: Colors.black,
         // backgroundColor:Color(0xffe5634d),
       ),
@@ -34,12 +33,11 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-
                     SizedBox(height: 10),
                     Expanded(child: VerticalSlider()),
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
                     Flexible(child: OurStartFaculties()),
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
                     Courses(),
                     // AboutUs()
                   ],

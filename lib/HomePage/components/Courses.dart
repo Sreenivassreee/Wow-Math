@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swardhara_new/DetailedPage/DetailedPage.dart';
+import 'package:swardhara_new/CourseDetailedPage/CourseDetailedPage.dart';
 
 class Courses extends StatefulWidget {
   const Courses({Key? key}) : super(key: key);
@@ -52,15 +52,16 @@ class _CoursesState extends State<Courses> {
                   padding:
                       const EdgeInsets.only(left: 10.0, right: 10, bottom: 5),
                   child: Card(
+                    elevation: 0,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
+                      borderRadius: BorderRadius.circular(15.0),
                     ),
                     child: InkWell(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DetailedPage(),
+                            builder: (context) => CourseDetailedPage(),
                           ),
                         );
                       },
@@ -74,8 +75,8 @@ class _CoursesState extends State<Courses> {
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                bottomLeft: Radius.circular(20),
+                                topLeft: Radius.circular(15),
+                                bottomLeft: Radius.circular(15),
                               ),
                               child: Container(
                                 alignment: Alignment.centerLeft,

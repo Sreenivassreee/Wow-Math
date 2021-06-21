@@ -8,7 +8,6 @@ import 'package:swardhara_new/HomePage/homepage.dart';
 import 'package:swardhara_new/Profile/Profile.dart';
 import 'package:swardhara_new/Youtube/Youtube%20Player.dart';
 
-
 class NavBar extends StatefulWidget {
   @override
   _NavBarState createState() => _NavBarState();
@@ -37,7 +36,7 @@ class _NavBarState extends State<NavBar> {
   }
 
   static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   var _widgetOptions = <Widget>[
     HomePage(),
 
@@ -72,13 +71,17 @@ class _NavBarState extends State<NavBar> {
       return CupertinoTabScaffold(
           tabBar: CupertinoTabBar(items: [
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.home),),
+              icon: Icon(CupertinoIcons.home),
+            ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.table),),
+              icon: Icon(CupertinoIcons.book),
+            ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.book),),
+              icon: Icon(CupertinoIcons.rectangle),
+            ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.person),)
+              icon: Icon(CupertinoIcons.person),
+            )
           ]),
           tabBuilder: (context, index) {
             switch (index) {
@@ -118,24 +121,23 @@ class _NavBarState extends State<NavBar> {
           type: BottomNavigationBarType.fixed,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_rounded),
-              label: 'Home',
+              icon: Icon(CupertinoIcons.home),
+              label: 'HOME',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.music_note),
-              label: 'Curriculum',
+              icon: Icon(CupertinoIcons.book),
+              label: 'MY COURSES',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.edit),
-              label: 'Blog',
+              icon: Icon(Icons.report),
+              label: 'REPORTS',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.person,
+                CupertinoIcons.person,
               ),
-              label: 'Profile',
+              label: 'PROFILE',
             ),
-
           ],
           // currentIndex: _selectedIndex,
         ),
