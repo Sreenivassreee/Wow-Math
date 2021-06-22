@@ -3,9 +3,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="swardhara_new"
+
         android:icon="@mipmap/ic_launcher">
         <activity
+
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"

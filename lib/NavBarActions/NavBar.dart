@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:swardhara_new/Blogs/Blog.dart';
 import 'package:swardhara_new/Curriculum/curriculum.dart';
 import 'package:swardhara_new/HomePage/homepage.dart';
+import 'package:swardhara_new/PayU/Test.dart';
 import 'package:swardhara_new/Profile/Profile.dart';
+import 'package:swardhara_new/WebView/WebviewScreen.dart';
 import 'package:swardhara_new/Youtube/Youtube%20Player.dart';
 
 class NavBar extends StatefulWidget {
@@ -31,18 +33,20 @@ class _NavBarState extends State<NavBar> {
   }
 
   void onTabTapped(int index) {
-    this._pageController.animateToPage(index,
-        duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+    this._pageController.jumpToPage(index);
+    // this._pageController.animateToPage(index,
+    //     duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   var _widgetOptions = <Widget>[
     HomePage(),
-
+    // MyAppPayment(),
     Curriculum(),
     Blogs(),
-    Profile(),
+    WebViewExample(),
+    // Profile(),
 
     // Text(
     //   'Index 1: Curriculum',
@@ -89,7 +93,7 @@ class _NavBarState extends State<NavBar> {
                 return HomePage();
                 break;
               case 1:
-                return Curriculum();
+                return MyAppPayment();
                 break;
               case 2:
                 return Blogs();
@@ -102,10 +106,12 @@ class _NavBarState extends State<NavBar> {
     } else
       return Scaffold(
         body: PageView(
-            children: _widgetOptions,
-            onPageChanged: onPageChanged,
-            controller: _pageController,
-            physics: new NeverScrollableScrollPhysics()),
+          scrollDirection: Axis.horizontal,
+          children: _widgetOptions,
+          onPageChanged: onPageChanged,
+          controller: _pageController,
+          // physics: new NeverScrollableScrollPhysics()
+        ),
         // Center(
         //   child:_widgetOptions.elementAt(_selectedIndex),
         // ),
