@@ -1,10 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swardhara_new/Blogs/Blog.dart';
+
 import 'package:swardhara_new/Curriculum/curriculum.dart';
 import 'package:swardhara_new/HomePage/homepage.dart';
+import 'package:swardhara_new/MyCourses/MyCourses.dart';
 import 'package:swardhara_new/PayU/Test.dart';
 import 'package:swardhara_new/Profile/Profile.dart';
 import 'package:swardhara_new/WebView/WebviewScreen.dart';
@@ -43,10 +43,10 @@ class _NavBarState extends State<NavBar> {
   var _widgetOptions = <Widget>[
     HomePage(),
     // MyAppPayment(),
+    MyCourses(),
     Curriculum(),
-    Blogs(),
+    Profile(),
     WebViewExample(),
-    // Profile(),
 
     // Text(
     //   'Index 1: Curriculum',
@@ -93,10 +93,10 @@ class _NavBarState extends State<NavBar> {
                 return HomePage();
                 break;
               case 1:
-                return MyAppPayment();
+                return MyCourses();
                 break;
               case 2:
-                return Blogs();
+                return Curriculum();
                 break;
               default:
                 return Profile();
@@ -106,12 +106,11 @@ class _NavBarState extends State<NavBar> {
     } else
       return Scaffold(
         body: PageView(
-          scrollDirection: Axis.horizontal,
-          children: _widgetOptions,
-          onPageChanged: onPageChanged,
-          controller: _pageController,
-          // physics: new NeverScrollableScrollPhysics()
-        ),
+            scrollDirection: Axis.horizontal,
+            children: _widgetOptions,
+            onPageChanged: onPageChanged,
+            controller: _pageController,
+            physics: new NeverScrollableScrollPhysics()),
         // Center(
         //   child:_widgetOptions.elementAt(_selectedIndex),
         // ),
@@ -143,6 +142,12 @@ class _NavBarState extends State<NavBar> {
                 CupertinoIcons.person,
               ),
               label: 'PROFILE',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                CupertinoIcons.text_badge_star,
+              ),
+              label: 'Test',
             ),
           ],
           // currentIndex: _selectedIndex,

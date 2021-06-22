@@ -81,7 +81,8 @@ class _CoursesState extends State<Courses> {
                               child: Container(
                                 alignment: Alignment.centerLeft,
                                 child: Image.network(
-                                  'https://www.creaticity.co.in/images/eventcity/upcoming/sid-sriram.jpg',
+                                  'https://jonmgomes.com/wp-content/uploads/2020/03/Liquid-Lightbulb-Animation-V2-800x600-1.gif',
+                                  // 'https://www.creaticity.co.in/images/eventcity/upcoming/sid-sriram.jpg',
                                   height: 150.0,
                                   width: 150.0,
                                   fit: BoxFit.cover,
