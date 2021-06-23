@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-
 class YoutubePage extends StatefulWidget {
-  String url="";
+  String url = "";
   YoutubePage(this.url);
   @override
   _YoutubePageState createState() => _YoutubePageState();
@@ -39,9 +38,9 @@ class _YoutubePageState extends State<YoutubePage> {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
+    // SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
     _controller = YoutubePlayerController(
-      initialVideoId:widget.url,
+      initialVideoId: widget.url,
       flags: const YoutubePlayerFlags(
         mute: false,
         autoPlay: true,
@@ -50,7 +49,6 @@ class _YoutubePageState extends State<YoutubePage> {
         isLive: false,
         forceHD: false,
         enableCaption: true,
-
       ),
     )..addListener(listener);
     _idController = TextEditingController();
@@ -98,7 +96,6 @@ class _YoutubePageState extends State<YoutubePage> {
         progressIndicatorColor: Colors.blueAccent,
         topActions: <Widget>[
           const SizedBox(width: 8.0),
-
         ],
         onReady: () {
           _isPlayerReady = true;
@@ -110,21 +107,60 @@ class _YoutubePageState extends State<YoutubePage> {
         },
       ),
       builder: (context, player) => Scaffold(
-
+        // backgroundColor: Colors.transparent,
         body: ListView(
           children: [
             player,
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-
-                  FullScreenButton(
-                    controller: _controller,
-                    color: Colors.red,
-                  ),
-                ],
+              padding: const EdgeInsets.all(10.0),
+              child: Card(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(width: 10),
+                        FullScreenButton(
+                          controller: _controller,
+                          color: Colors.red,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Full Screen",
+                          style: TextStyle(fontSize: 19),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(width: 10),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.clear_outlined,
+                              color: Colors.red,
+                            )),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Quit",
+                          style: TextStyle(fontSize: 19),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
@@ -183,18 +219,18 @@ class _YoutubePageState extends State<YoutubePage> {
         color: Colors.blueAccent,
         onPressed: _isPlayerReady
             ? () {
-          if (_idController.text.isNotEmpty) {
-            var id = YoutubePlayer.convertUrlToId(
-              _idController.text,
-            ) ??
-                '';
-            if (action == 'LOAD') _controller.load(id);
-            if (action == 'CUE') _controller.cue(id);
-            FocusScope.of(context).requestFocus(FocusNode());
-          } else {
-            _showSnackBar('Source can\'t be empty!');
-          }
-        }
+                if (_idController.text.isNotEmpty) {
+                  var id = YoutubePlayer.convertUrlToId(
+                        _idController.text,
+                      ) ??
+                      '';
+                  if (action == 'LOAD') _controller.load(id);
+                  if (action == 'CUE') _controller.cue(id);
+                  FocusScope.of(context).requestFocus(FocusNode());
+                } else {
+                  _showSnackBar('Source can\'t be empty!');
+                }
+              }
             : null,
         disabledColor: Colors.grey,
         disabledTextColor: Colors.black,

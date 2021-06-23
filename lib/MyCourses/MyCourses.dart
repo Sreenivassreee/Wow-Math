@@ -22,6 +22,7 @@ class MyCourses extends StatelessWidget {
                 padding:
                     const EdgeInsets.only(left: 10.0, right: 10, bottom: 2),
                 child: Card(
+                  elevation: 0,
                   child: InkWell(
                     onTap: () {
                       // Navigator.push(

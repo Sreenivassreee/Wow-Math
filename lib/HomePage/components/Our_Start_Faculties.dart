@@ -31,7 +31,7 @@ class _OurStartFacultiesState extends State<OurStartFaculties> {
           child: Padding(
             padding: const EdgeInsets.only(left: 20, bottom: 0, top: 10),
             child: Text(
-              "Our Start Faculties",
+              "OUR STAR FACULTIES",
               textAlign: TextAlign.start,
               style: TextStyle(
                   fontFamily: 'Roboto',
@@ -43,33 +43,36 @@ class _OurStartFacultiesState extends State<OurStartFaculties> {
         SizedBox(
           height: 10,
         ),
-        Container(
-          height: 120,
-          child: Center(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: food.length,
-              itemBuilder: (BuildContext context, int index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SuggestedPage(),
+        Padding(
+          padding: const EdgeInsets.only(left: 15),
+          child: Container(
+            height: 120,
+            child: Center(
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: food.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SuggestedPage(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 6),
+                      child: CircleAvatar(
+                        radius: 45,
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: NetworkImage(
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt28SHuioMNFCApN0ZgSB2wW48od3GPaSbKQ&usqp=CAU"),
                       ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6),
-                    child: CircleAvatar(
-                      radius: 45,
-                      backgroundColor: Colors.transparent,
-                      backgroundImage: NetworkImage(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt28SHuioMNFCApN0ZgSB2wW48od3GPaSbKQ&usqp=CAU"),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ),
         )
