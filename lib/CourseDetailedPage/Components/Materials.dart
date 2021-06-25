@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swardhara_new/File%20Reader/FireReader.dart';
 
 class Materials extends StatelessWidget {
   const Materials({Key? key}) : super(key: key);
@@ -22,12 +23,12 @@ class Materials extends StatelessWidget {
             ),
             child: InkWell(
               onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => DetailedPage(),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PDFReader(),
+                  ),
+                );
               },
               child: Container(
                 height: 120,
