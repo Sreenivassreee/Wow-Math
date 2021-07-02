@@ -51,7 +51,7 @@ class _CourseDetailedPageState extends State<CourseDetailedPage> {
                     ),
                   ),
                   Positioned(
-                    top: 200,
+                    top: MediaQuery.of(context).size.height / 4.5,
                     left: 10,
                     child: Row(
                       children: [

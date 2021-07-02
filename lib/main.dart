@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:swardhara_new/FlashScreen.dart';
 import 'package:swardhara_new/NavBarActions/NavBar.dart';
@@ -37,6 +38,7 @@ class _MyAppState extends State<MyApp> {
       },
       child: Consumer<DarkThemeProvider>(
         builder: (BuildContext context, value, Widget? child) {
+          SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: Styles.themeData(themeChangeProvider.darkTheme, context),

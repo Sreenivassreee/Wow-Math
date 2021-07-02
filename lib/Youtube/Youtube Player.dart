@@ -139,25 +139,30 @@ class _YoutubePageState extends State<YoutubePage> {
                     SizedBox(
                       height: 15,
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(width: 10),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.clear_outlined,
-                              color: Colors.red,
-                            )),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          "Quit",
-                          style: TextStyle(fontSize: 19),
-                        )
-                      ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(width: 10),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.clear_outlined,
+                                color: Colors.red,
+                              )),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Quit",
+                            style: TextStyle(fontSize: 19),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),
